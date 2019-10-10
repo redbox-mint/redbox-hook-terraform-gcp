@@ -1,0 +1,16 @@
+{
+  "@hook-tf-gcp-omeka-title": "Google Cloud - Omeka",
+  "@hook-tf-gcp-omeka-description": "Provisions an Omeka instance in a VM within your institution's Google Cloud account.",
+  "@hook-tf-gcp-omeka-create-workspace": "Create Omeka Workspace",
+  "@hook-tf-gcp-omeka-workspace-name": "Workspace Name",
+  "@hook-tf-gcp-omeka-workspace-default-location": "Workspace still provisioning, please wait.",
+  "@hook-tf-gcp-omeka-label-description": "Description",
+  "@hook-tf-gcp-linux-title": "Google Cloud - CeNTOS 7",
+  "@hook-tf-gcp-linux-description": "Provisions an CeNTOS 7 instance in a VM within your institution's Google Cloud account.",
+  "@hook-tf-gcp-linux-create-workspace": "Create CeNTOS 7 Workspace",
+  "@hook-tf-gcp-linux-workspace-name": "Workspace Name",
+  "@hook-tf-gcp-linux-workspace-default-location": "Workspace still provisioning, please wait.",
+  "@hook-tf-gcp-linux-label-description": "Description",
+  "@hook-tf-gcp-linux-ssh-username": "SSH Username",
+  "@hook-tf-gcp-linux-ssh-key": "SSH Public Key"
+}
