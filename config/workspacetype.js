@@ -15,7 +15,8 @@ module.exports.workspacetype = {
     vm_image: 'centos-cloud/centos-7',
     service: 'TfGcpService',
     // expects {user: 'username', key: 'public key'}
-    vm_admin_credentials: {user: '', key: ''}
+    vm_admin_credentials: {user: '', key: ''},
+    postProvisionState: 'provisioned'
   }
   // ,
   // 'terraform-gcp-omeka': {
