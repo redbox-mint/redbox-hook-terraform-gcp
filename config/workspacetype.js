@@ -8,14 +8,14 @@ module.exports.workspacetype = {
     logo: '/images/GCP-Linux.png',
     defaultLocation: '@hook-tf-gcp-linux-workspace-default-location',
     // TF/TG config
-    terragrunt_base: '/opt/redbox-portal/node_modules/redbox-hook-terraform-gcp/live/',
+    terragrunt_base: '/opt/redbox-portal/node_modules/@researchdatabox/redbox-hook-terraform-gcp/live/',
     // Note, other variables are too sensitive/risky to be placed in a config file
     // Please inject these via environment variables. See README.
     vm_type: 'f1-micro',
     vm_image: 'centos-cloud/centos-7',
     service: 'TfGcpService',
-    // expects {user: 'username', key: 'public key'}
-    vm_admin_credentials: {user: '', key: ''},
+    // optionally, you can set the default user/admin creds, in the form: {user: 'username', key: 'public key'}
+    // vm_admin_credentials: {user: '', key: ''},
     postProvisionState: 'provisioned'
   }
   // ,

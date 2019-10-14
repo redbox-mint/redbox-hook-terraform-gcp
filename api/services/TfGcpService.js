@@ -20,8 +20,9 @@ var Services;
             const inputMap = {};
             const recType = record.metaMetadata.type;
             const vm_ssh_keys = [];
-            if (!_.isEmpty(sails.config.workspacetype[recType].vm_admin_credentials)) {
-                vm_ssh_keys.push(sails.config.workspacetype[recType].vm_admin_credentials);
+            const adminCreds = sails.config.workspacetype[recType].vm_admin_credentials;
+            if (!_.isEmpty(adminCreds)) {
+                vm_ssh_keys.push(_.isMap(adminCreds) ? adminCreds : JSON.parse(adminCreds));
             }
             vm_ssh_keys.push({
                 user: record.metadata.user,

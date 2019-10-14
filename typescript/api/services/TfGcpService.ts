@@ -51,8 +51,10 @@ export module Services {
       // build the vm_ssh_keys
       const vm_ssh_keys = [];
       // always add the admin
-      if (!_.isEmpty(sails.config.workspacetype[recType].vm_admin_credentials)) {
-        vm_ssh_keys.push(sails.config.workspacetype[recType].vm_admin_credentials);
+      const adminCreds = sails.config.workspacetype[recType].vm_admin_credentials;
+      if (!_.isEmpty(adminCreds)) {
+        // always expect admin creds to be a map
+        vm_ssh_keys.push(_.isMap(adminCreds) ? adminCreds : JSON.parse(adminCreds) );
       }
       // build the user list
       vm_ssh_keys.push({

@@ -30,7 +30,7 @@ var walkSync = function(dir, filelist) {
 };
 
 const hook_log_header = "Terraform Provisioner GCP";
-const hook_root_dir = "node_modules/redbox-hook-terraform-gcp"
+const hook_root_dir = "node_modules/@researchdatabox/redbox-hook-terraform-gcp"
 
 module.exports = function (sails) {
   return {
