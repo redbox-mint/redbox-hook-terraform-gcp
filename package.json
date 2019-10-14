@@ -1,6 +1,6 @@
 {
   "name": "@researchdatabox/redbox-hook-terraform-gcp",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "A Google Cloud-specific plugin for ReDBox's Terraform provisioner",
   "main": "index.js",
   "author": "Shilo Banihit (https://www.redboxresearchdata.com.au)",
