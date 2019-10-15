@@ -129,7 +129,7 @@ draftFields.push({
   compClass: 'SaveButtonComponent',
   definition: {
     label: "@hook-tf-gcp-linux-create-workspace",
-    targetStep: 'provisioning',
+    targetStep: 'terraform-gcp-linux-provisioning',
     closeOnSave: true,
     redirectLocation: '/@branding/@portal/record/edit/@rdmp?focusTabId=workspaces'
   },

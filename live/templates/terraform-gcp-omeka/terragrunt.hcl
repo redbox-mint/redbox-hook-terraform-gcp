@@ -1,5 +1,5 @@
 #####################################################################
-## Linux Server in Google Cloud - Terragrunt Configuration
+## Omeka Server in Google Cloud - Terragrunt Configuration
 ##
 ## This module is part of ReDBox's Terraform Google Cloud Workspace Provisioner
 ##

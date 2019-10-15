@@ -79,6 +79,13 @@ export module Services {
           label: label,
           link: sshUrl
         }
+      } else if (recType == "terraform-gcp-omeka") {
+        const omekaUrl = `http://${record.metadata.output.remote_public_ip.value}`;
+        const label = `Omeka URL: ${omekaUrl}, SSH User: ${record.metadata.user}`;
+        return {
+          label: label,
+          link: omekaUrl
+        }
       }
       return record.metadata.location;
     }

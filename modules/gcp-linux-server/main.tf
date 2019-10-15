@@ -49,4 +49,6 @@ resource "google_compute_instance" "linux_instance" {
   #   access_config {
   #   }
   # }
+  // Apply the firewall rule to allow external IPs to access this instance
+ tags = ["http-server"]
 }
