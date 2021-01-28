@@ -10,7 +10,7 @@
 remote_state {
   backend = "gcs"
   config = {
-    skip_bucket_creation = true
+    skip_bucket_creation = false
     bucket = "${get_env("TG_BUCKET_NAME", "")}"
     prefix = "${path_relative_to_include()}"
     # Notes:

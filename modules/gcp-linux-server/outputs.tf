@@ -1,3 +1,3 @@
-output "remote_public_ip" {
-  value = "${google_compute_instance.linux_instance.network_interface.0.access_config.0.nat_ip}"
+output "instance_details" {
+  value = "instance details"
 }

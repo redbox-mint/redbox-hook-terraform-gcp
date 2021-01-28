@@ -1,6 +1,7 @@
 module.exports.recordtype = {
   "terraform-gcp-linux": {
     "packageType": "workspace",
+    "searchable": false,
     "searchFilters": [
       {
         name: "text_title",
@@ -39,6 +40,7 @@ module.exports.recordtype = {
   },
   "terraform-gcp-omeka": {
     "packageType": "workspace",
+    "searchable": false,
     "searchFilters": [
       {
         name: "text_title",

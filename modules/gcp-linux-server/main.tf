@@ -22,11 +22,11 @@ provider "google" {
 resource "google_compute_instance" "linux_instance" {
   name         = "${var.vm_name}"
   machine_type = "${var.vm_type}"
-  description = "${var.vm_description}"
+  description  = "${var.vm_description}"
 
   metadata = {
-    ssh-keys = join("\n", [for keypair in var.vm_ssh_keys :  "${keypair.user}: ${keypair.key}" ])
-    rdmp_oid = "${var.vm_rdmp_oid}"
+    ssh-keys      = join("\n", [for keypair in var.vm_ssh_keys : "${keypair.user}: ${keypair.key}"])
+    rdmp_oid      = "${var.vm_rdmp_oid}"
     workspace_oid = "${var.vm_workspace_oid}"
   }
 
@@ -37,11 +37,27 @@ resource "google_compute_instance" "linux_instance" {
   }
 
   network_interface {
-    # A default network is created for all GCP projects
-    network = "default"
-    access_config {
-    }
+    # network config
+    # networks and subnets avilable to redbox on the shared vpc based on the current instances
+    # nonprod front
+    # https://www.googleapis.com/compute/v1/projects/uow-shared-networking/regions/australia-southeast1/subnetworks/gcp-ase1-redbox-front
+    # nonprod back
+    # https://www.googleapis.com/compute/v1/projects/uow-shared-networking/regions/australia-southeast1/subnetworks/gcp-ase1-redbox-back
+    # prod front
+    # https://www.googleapis.com/compute/v1/projects/uow-shared-networking/regions/australia-southeast1/subnetworks/gcp-ase1-redbox-front
+    # prod back
+    # https://www.googleapis.com/compute/v1/projects/uow-shared-networking/regions/australia-southeast1/subnetworks/gcp-ase1-redbox-back
+
+    network    = "https://www.googleapis.com/compute/v1/projects/uow-shared-networking/global/networks/uow-shared-vpc"
+    subnetwork = "https://www.googleapis.com/compute/v1/projects/uow-shared-networking/regions/australia-southeast1/subnetworks/gcp-ase1-redbox-front"
   }
+
+  # network_interface {
+  #   # A default network is created for all GCP projects
+  #   network = "default"
+  #   access_config {
+  #   }
+  # }
 
   # network_interface {
   #   # A default network is created for all GCP projects
@@ -50,5 +66,6 @@ resource "google_compute_instance" "linux_instance" {
   #   }
   # }
   // Apply the firewall rule to allow external IPs to access this instance
- tags = ["http-server"]
+  # tags = ["http-server"]
+  tags = ["redbox-allow-mgmt", "redbox-nonprod", "redbox-front"]
 }
