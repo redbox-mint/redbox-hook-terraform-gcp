@@ -5,34 +5,34 @@
 #####################################################################
 variable "gcp_project_id" {
   description = "GC Project ID"
-  type        = "string"
+  type        = string
 }
 
 variable "gcp_region_name" {
   description = "GC Region Name"
-  type        = "string"
+  type        = string
   default     = "australia-southeast1"
 }
 
 variable "gcp_zone_name" {
   description = "GC Zone Name"
-  type        = "string"
+  type        = string
   default     = "australia-southeast1-b"
 }
 
 variable "vm_name" {
   description = "Name of the VM instance"
-  type        = "string"
+  type        = string
 }
 
 variable "vm_type" {
   description = "VM type of the instance"
-  type        = "string"
+  type        = string
 }
 
 variable "vm_image" {
   description = "VM image for this instance"
-  type        = "string"
+  type        = string
 }
 
 variable "vm_ssh_keys" {
@@ -47,15 +47,15 @@ variable "vm_ssh_keys" {
 
 variable "vm_description" {
   description = "Description of this VM."
-  type = "string"
+  type = string
 }
 
 variable "vm_rdmp_oid" {
   description = "The RDMP OID for this workspace."
-  type = "string"
+  type = string
 }
 
 variable "vm_workspace_oid" {
   description = "The OID for this workspace."
-  type = "string"
+  type = string
 }

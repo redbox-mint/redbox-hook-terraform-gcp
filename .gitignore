@@ -3,3 +3,4 @@ sailsWorkingDir
 *.tfstate*
 .terragrunt-cache
 .tmp
+node_modules/

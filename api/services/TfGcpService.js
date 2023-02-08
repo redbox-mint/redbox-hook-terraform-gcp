@@ -1,10 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Services = void 0;
 const Rx_1 = require("rxjs/Rx");
-const services = require("../core/CoreService.js");
+const redbox_core_types_1 = require("@researchdatabox/redbox-core-types");
 var Services;
 (function (Services) {
-    class TfGcpService extends services.Services.Core.Service {
+    class TfGcpService extends redbox_core_types_1.Services.Core.Service {
         constructor() {
             super(...arguments);
             this._exportedMethods = [

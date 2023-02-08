@@ -36,7 +36,7 @@ resource "google_compute_instance" "linux_instance" {
     }
   }
 
-  network_interface {
+  #network_interface {
     # network config
     # networks and subnets avilable to redbox on the shared vpc based on the current instances
     # nonprod front
@@ -48,16 +48,16 @@ resource "google_compute_instance" "linux_instance" {
     # prod back
     # https://www.googleapis.com/compute/v1/projects/uow-shared-networking/regions/australia-southeast1/subnetworks/gcp-ase1-redbox-back
 
-    network    = "https://www.googleapis.com/compute/v1/projects/uow-shared-networking/global/networks/uow-shared-vpc"
-    subnetwork = "https://www.googleapis.com/compute/v1/projects/uow-shared-networking/regions/australia-southeast1/subnetworks/gcp-ase1-redbox-front"
-  }
+  #  network    = "https://www.googleapis.com/compute/v1/projects/uow-shared-networking/global/networks/uow-shared-vpc"
+  #  subnetwork = "https://www.googleapis.com/compute/v1/projects/uow-shared-networking/regions/australia-southeast1/subnetworks/gcp-ase1-redbox-front"
+  #}
 
-  # network_interface {
+   network_interface {
   #   # A default network is created for all GCP projects
-  #   network = "default"
-  #   access_config {
-  #   }
-  # }
+     network = "default"
+     access_config {
+     }
+   }
 
   # network_interface {
   #   # A default network is created for all GCP projects
